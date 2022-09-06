@@ -1,2 +1,11 @@
-<h1>Memes#new</h1>
-<p>Find me in app/views/memes/new.html.erb</p>
+<div class="container">
+  <h1>Create a new Meme</h1>
+  <div class="form-new mb-3 p-5">
+    <%= simple_form_for @meme do |f| %>
+      <%= f.input :title %>
+      <%= f.input :category %>
+      <%= f.input :price %>
+      <%= f.button :submit, :class =>"btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
