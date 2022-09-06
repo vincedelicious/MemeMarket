@@ -1,6 +1,6 @@
 class MemesController < ApplicationController
   def index
-    @meme = Meme.all
+    @memes = Meme.all
   end
 
   def show
@@ -8,6 +8,9 @@ class MemesController < ApplicationController
   end
 
   def destroy
+    @meme = Meme.find(params[:id])
+    @meme.destroy
+    redirect_to memes_path, status: :see_other
   end
 
   def new
@@ -25,9 +28,14 @@ class MemesController < ApplicationController
   end
 
   def update
+    @meme = Meme.find(params[:id])
+    @meme.title = meme_params.title
+    @meme.category = meme_params.category
+    @meme.price = meme_params.price
   end
 
   def edit
+    @meme = Meme.find(params[:id])
   end
 
   private
