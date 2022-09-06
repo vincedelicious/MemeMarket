@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    @memes = Meme.where { |meme| meme.user == current_user }
+  end
 end
