@@ -1,7 +1,13 @@
-<div class="container">
-  <h1>Meme <%= @meme.title %></h1>
-  <p><%= @meme.price %></p>
-  <p><%= cl_image_tag(@meme.photo.key) %></p>
-  <p><%= @meme.description %></p>
-  <p><%= @meme.category %></p>
+<div class="container container-show">
+  <div class="d-flex">
+    <div class="container-show-tile1">
+      <h1><%= @meme.title %></h1>
+      <%= cl_image_tag(@meme.photo.key) %>
+    </div>
+    <div>
+      <p><%= @meme.price %></p>
+      <p><%= @meme.description %></p>
+      <p><%= @meme.category %></p>
+    </div>
+  </div>
 </div>

@@ -1,17 +1,26 @@
 <div class="container">
-  <h1>Market Place</h1>
-  <% @memes.each do |meme| %>
-    <a href="/memes/<%= meme.id %>">
-      <div class="col-md-4 mt-4 mt-sm-0 card-container">
-        <div class="card card-index text-center product border-0 h-100 rounded-0">
-          <%= cl_image_tag meme.photo.key, class: "pb-4" %>
-          <div class="card-body p-4 py-0 h-xs-440p">
-            <p>Title</p>
-            <p>Text</p>
+  <div class="heading">
+    <h1>Market Place</h1>
+  </div>
+  <div class="row mb-2 mt-5">
+    <% @memes.each do |meme| %>
+      <a href="/memes/<%= meme.id %>">
+          <div class="d-flex justify-content-between postcard light blue">
+            <div class="image-index">
+              <%= cl_image_tag meme.photo.key %>
+            </div>
+            <div class="postcard__text t-dark">
+              <h1 class="postcard__title blue"><%= meme.title %></h1>
+              <div class="postcard__subtitle medium">
+                <p><%= meme.category %></p>
+              </div>
+              <div class="postcard__bar"></div>
+              <div class="postcard__preview-txt"><%= meme.description %></div>
+              <p><i class="fa-solid fa-dollar-sign large"></i> <%= meme.price %></p>
+            </div>
           </div>
-          <p class="btn w-100 px-4 text-center mx-auto">Button</p>
-        </div>
-      </div>
-    </a>
-  <% end %>
+      </a>
+    <% end %>
+  </div>
+</div>
 </div>
