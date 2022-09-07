@@ -41,6 +41,6 @@ class MemesController < ApplicationController
   private
 
   def meme_params
-    params.require(:meme).permit(:title, :category, :price)
+    params.require(:meme).permit(:title, :category, :price, :photo)
   end
 end

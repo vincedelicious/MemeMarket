@@ -1,4 +1,5 @@
 class Meme < ApplicationRecord
   belongs_to :user
-  validates :title, :category, :price, presence: true
+  has_one_attached :photo
+  validates :title, :category, :price, :photo, presence: true
 end
