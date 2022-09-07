@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="form-container">
+      <h2>Create booking request for <%= @meme.title %> Meme</h2>
+      <%= simple_form_for [@meme, @booking] do |f| %>
+      <p class="mt-5">Enter </p>
+        <%= f.input :start_date, as: :date, date_separator: '', time_separator: ''%>
+        <%= f.input :end_date, as: :date, date_separator: '', time_separator: ''%>
+        <%= f.button :submit, :class =>"btn btn-success" %>
+      <% end %>
+      <%=  %>
+    </div>
+    <div class="booking-details mb-3 border shadow bg-white">
+      <%= cl_image_tag @meme.photo.key %>
+    </div>
+  </div>
+</div>

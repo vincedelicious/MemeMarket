@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'memes#index'
-  resources :memes
+  resources :memes do
+    resources :bookings, only: %i[new create show]
+  end
 
   get '/dashboard', to: 'pages#dashboard'
   get '/home', to: 'pages#home'
