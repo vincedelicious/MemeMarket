@@ -5,20 +5,18 @@
   <div class="row mb-2 mt-5">
     <% @memes.each do |meme| %>
       <a href="/memes/<%= meme.id %>">
-          <div class="d-flex justify-content-between postcard light blue">
-            <div class="image-index">
-              <%= cl_image_tag meme.photo.key %>
+        <div class="d-flex justify-content-between postcard light blue">
+          <%= cl_image_tag meme.photo.key %>
+          <div class="postcard__text t-dark">
+            <div class="postcard__subtitle small">
+            <h1 class="postcard__title blue"><%= meme.title %></h1>
+              <p><%= meme.category %></p>
             </div>
-            <div class="postcard__text t-dark">
-              <h1 class="postcard__title blue"><%= meme.title %></h1>
-              <div class="postcard__subtitle medium">
-                <p><%= meme.category %></p>
-              </div>
-              <div class="postcard__bar"></div>
-              <div class="postcard__preview-txt"><%= meme.description %></div>
-              <p><i class="fa-solid fa-dollar-sign large"></i> <%= meme.price %></p>
-            </div>
+            <div class="postcard__bar"></div>
+            <div class="postcard__preview-txt"><%= meme.description %></div>
+            <p><i class="fa-solid fa-dollar-sign large"></i> <%= meme.price %></p>
           </div>
+        </div>
       </a>
     <% end %>
   </div>
