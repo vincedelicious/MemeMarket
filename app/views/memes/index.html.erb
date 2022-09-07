@@ -1,5 +1,17 @@
 <div class="container">
   <h1>Market Place</h1>
-  <p>Cards with all the memes avaliable for sale</p>
-  <%# Loop through @memes to display everything on the marketplace %>
+  <% @memes.each do |meme| %>
+    <a href="/memes/<%= meme.id %>">
+      <div class="col-md-4 mt-4 mt-sm-0 card-container">
+        <div class="card card-index text-center product border-0 h-100 rounded-0">
+          <%= cl_image_tag meme.photo.key, class: "pb-4" %>
+          <div class="card-body p-4 py-0 h-xs-440p">
+            <p>Title</p>
+            <p>Text</p>
+          </div>
+          <p class="btn w-100 px-4 text-center mx-auto">Button</p>
+        </div>
+      </div>
+    </a>
+  <% end %>
 </div>

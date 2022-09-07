@@ -1,12 +1,18 @@
-.navbar-lewagon {
+.navbar-meme {
   justify-content: space-between;
   background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-meme .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-meme .navbar-brand {
   width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-image: url("meme_icon.png");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }

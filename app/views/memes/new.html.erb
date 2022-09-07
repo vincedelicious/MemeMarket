@@ -3,7 +3,9 @@
   <div class="form-new mb-3 p-5">
     <%= simple_form_for @meme do |f| %>
       <%= f.input :title %>
+      <%= f.input :photo, as: :file %>
       <%= f.input :category %>
+      <%= f.input :description %>
       <%= f.input :price %>
       <%= f.button :submit, :class =>"btn btn-primary" %>
     <% end %>

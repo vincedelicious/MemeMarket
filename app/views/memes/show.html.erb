@@ -1,5 +1,7 @@
 <div class="container">
   <h1>Meme <%= @meme.title %></h1>
   <p><%= @meme.price %></p>
+  <p><%= cl_image_tag(@meme.photo.key) %></p>
+  <p><%= @meme.description %></p>
   <p><%= @meme.category %></p>
 </div>
