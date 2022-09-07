@@ -6,15 +6,17 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @meme = Meme.find(params[:meme_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @meme = Meme.find(params[:meme_id])
     @booking.status = 0
     @booking.meme = Meme.find(params[:meme_id])
     @booking.user = current_user
     if @booking.save
-      redirect_to meme_booking_path(@memem, @booking)
+      redirect_to meme_booking_path(@meme, @booking)
     else
       render 'new', status: :unprocessable_entity
     end
@@ -23,6 +25,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:comment, :movie_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end

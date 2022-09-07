@@ -1,14 +1,14 @@
 <div class="container container-show">
-  <div class="d-flex">
-    <div class="container-show-tile1">
+  <div class="d-flex align-items-center">
+    <div class="container-show-tile1 m-3">
       <h1><%= @meme.title %></h1>
       <%= cl_image_tag(@meme.photo.key) %>
+      <%= link_to "Request a booking", "/memes/#{@meme.id}/bookings/new", class: "btn btn-success mt-3" %>
     </div>
     <div class="container-show-tile2">
-      <p><%= @meme.price %></p>
-      <p><%= @meme.description %></p>
-      <p><%= @meme.category %></p>
-      <%= link_to "Request a booking", "/memes/#{@meme.id}/bookings/new", class: "btn btn-success" %>
+      <p>Category: <%= @meme.category %></p>
+      <p>Description: <%= @meme.description %></p>
+      <p>$ <%= @meme.price %></p>
     </div>
   </div>
 </div>
