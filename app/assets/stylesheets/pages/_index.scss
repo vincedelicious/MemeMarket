@@ -28,9 +28,9 @@ h1 {
   text-align: center;
 }
 /* This pen */
-body {
+.container-index1 {
   font-family: "Baloo 2", cursive;
-  font-size: 24px;
+  font-size: 16px;
   color: black;
   text-rendering: optimizeLegibility;
   font-weight: initial;
@@ -65,6 +65,7 @@ a:hover {
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
   border-radius: 10px;
   margin: 0 0 2rem 0;
+  height: 300px;
   overflow: hidden;
   position: relative;
   color: #ffffff;
@@ -87,8 +88,14 @@ a:hover {
   h1,
   .h1 {
     margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.2;
+  }
+
+  img {
+    max-width: 50%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .small {
@@ -115,7 +122,7 @@ a:hover {
 
   .postcard__bar {
     width: 50px;
-    height: 50px;
+    height: 30px;
     margin: 10px 0;
     border-radius: 5px;
     background-color: #424242;
