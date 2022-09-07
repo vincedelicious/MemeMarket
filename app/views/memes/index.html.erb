@@ -7,7 +7,7 @@
       <% @memes.each do |meme| %>
         <a href="/memes/<%= meme.id %>">
           <div class="d-flex justify-content-between postcard light blue">
-            <%= cl_image_tag meme.photo.key %>
+            <%= cl_image_path meme.photo.key %>
             <div class="postcard__text t-dark">
               <div class="postcard__subtitle small">
                 <h1 class="postcard__title blue"><%= meme.title %></h1>
