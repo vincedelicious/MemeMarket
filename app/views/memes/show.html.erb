@@ -1,22 +1,27 @@
 <div class="container container-show">
   <div class="d-flex align-items-start">
     <div class="container-show-tile1 m-2">
-      <article>
-        <h1><%= @meme.title %></h1>
-      </article>
       <%= cl_image_tag(@meme.photo.key) %>
       <div class="container ms-0 ps-0 justify-content-end">
-        <%= link_to '', "/memes/#{@meme.id}/bookings/new", class: "fa-regular fa-calendar blue-text me-5 ms-5" %>
+      </div>
+    </div>
+    <div class="container-show-tile2 ms-5">
+      <article>
+        <div class="d-flex mt-4 mb-4">
+          <h1><%= @meme.title %></h1>
+        </div>
+      </article>
+      <div class="d-flex">
+        <p class="badge card-price green me-2">$<%= @meme.price %></p>
+        <p class="badge purple ms-2"><%= @meme.category %></p>
+
+      </div>
+      <p class="mt-4 desc"><%= @meme.description %></p>
+      <div class="ms-0">
+        <%= link_to '', "/memes/#{@meme.id}/bookings/new", class: "fa-regular fa-calendar blue-text me-5 mt-5 pt-5" %>
         <%= link_to '', "/memes/#{@meme.id}/edit", class: "fa-solid fa-pen-to-square yellow-text me-5 ms-3" %>
         <%= link_to '', meme_path(@meme), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "fa-regular fa-trash-can purple-text ms-2" %>
       </div>
-    </div>
-    <div class="container-show-tile2 ms-5 mt-3 pt-5">
-      <div class="d-flex-3">
-        <p class="card-price m-1">$ <%= @meme.price %></p>
-        <p class="badge purple m-1"><%= @meme.category %></p>
-      </div>
-      <p class="mt-4 desc"><%= @meme.description %></p>
     </div>
   </div>
 </div>
