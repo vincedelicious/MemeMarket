@@ -1,4 +1,33 @@
-<div class="container">
-<h1>Edit Page</h1>
-<p>Show details etc</p>
-</div>
+<div class="container container-show">
+  <div class="d-flex align-items-center">
+    <div class="container-show-tile1 m-3">
+      <article>
+        <h1 class="h2-show mb-5"><%= @meme.title %></h1>
+      </article>
+      <%= cl_image_tag(@meme.photo.key) %>
+    </div>
+    <div class="container-show-tile2">
+      <%= simple_form_for @meme do |f| %>
+        <div class="d-flex">
+          <div class="m-2">
+            <%= f.input :title %>
+          </div>
+          <div class="m-2">
+            <%= f.input :category %>
+          </div>
+        </div>
+        <div class="m-2">
+          <%= f.input :description %>
+        </div>
+        <div class="d-flex">
+          <div class="m-2">
+            <%= f.input :photo, as: :file %>
+          </div>
+          <div class="m-2">
+            <%= f.input :price %>
+          </div>
+        </div>
+        <%= f.button :submit, :class =>"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>

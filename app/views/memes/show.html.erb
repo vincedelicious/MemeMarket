@@ -4,6 +4,8 @@
       <h1><%= @meme.title %></h1>
       <%= cl_image_tag(@meme.photo.key) %>
       <%= link_to "Request a booking", "/memes/#{@meme.id}/bookings/new", class: "btn btn-success mt-3" %>
+      <%= link_to "Edit", "/memes/#{@meme.id}/edit", class: "btn btn-warning mt-3" %>
+      <%= link_to "Delete", meme_path(@meme), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{@meme.title}?"}, class: "btn btn-danger mt-3" %>
     </div>
     <div class="container-show-tile2">
       <p>Category: <%= @meme.category %></p>
