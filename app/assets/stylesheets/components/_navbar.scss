@@ -1,15 +1,23 @@
 .navbar-meme {
   font-size: 16px;
   justify-content: space-between;
-  background-color: #110f16;
+  position: sticky;
+  top: 0%;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  z-index: 10;
 }
 
 .nav-link {
-  color:white;
+  color: white;
   font-size: 20px;
   &:hover {
     color: #a149e9;
   }
+}
+
+.navbar-nav {
+  text-shadow: 1px 1px 10px #110f16;
 }
 
 .navbar-meme .navbar-collapse {

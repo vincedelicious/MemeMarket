@@ -1,18 +1,18 @@
 <div class="container container-index">
   <article>
-    <h1 class="h1-index mb-5">Market Place</h1>
-
-    <%= form_with url: memes_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a meme"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
+    <h1 class="h1-index mt-5">Market Place</h1>
+    <p class="mb-5 small">All the memes in one place!</p>
   </article>
-  <div class="container-index1">
+  <div class="container container-index-search">
+    <%= form_with url: memes_path, method: :get, class: "d-flex rounded-lg" do %>
+      <%= text_field_tag :query,
+    params[:query],
+    class: "form-control search-bar ms-5",
+    placeholder: "Find a meme"%>
+      <%= submit_tag "Search", class: "btn ms-2 purple" %>
+    <% end %>
+  </div>
+  <div class="container m-0 pt-0 ps-3 pe-3 container-index1">
     <div class="row">
       <% @memes.each do |meme| %>
         <a href="/memes/<%= meme.id %>">

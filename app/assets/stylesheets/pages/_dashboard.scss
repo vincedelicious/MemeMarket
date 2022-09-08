@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+article {
+  background: linear-gradient(
+    to right,
+    hsl(98, 100%, 62%),
+    hsl(204, 100%, 59%)
+  );
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
 .card {
   color: #10182f;
   margin: 10px;
@@ -64,12 +76,14 @@
   background-color: #cd5b9f;
 }
 
+.accordion {
+  border: 0px;
+}
+
+.bckg-color {
+  background-color: #110f16;
+}
 .purple {
   background-color: #a149e9;
   color: white;
-}
-
-.row-dashboard {
-  border: 1px solid rgb(233, 77, 129);
-  border-radius: 10px;
 }
