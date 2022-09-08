@@ -3,9 +3,20 @@
     <div class="form-container">
       <h2>Create booking request for <%= @meme.title %> Meme</h2>
       <%= simple_form_for [@meme, @booking] do |f| %>
-      <p class="mt-5">Enter </p>
-        <%= f.input :start_date, as: :date, date_separator: '', time_separator: ''%>
-        <%= f.input :end_date, as: :date, date_separator: '', time_separator: ''%>
+      <p>Start Date<br>
+        <%= f.text_field :start_date, as: :date, data: {
+      controller: "flatpickr",
+      flatpickr_date_format: "Y-m-d",
+      flatpickr_min_date: Time.zone.now
+    } %>
+    </p>
+    <p>End Date <br>
+        <%= f.text_field :end_date, as: :date, data: {
+      controller: "flatpickr",
+      flatpickr_date_format: "Y-m-d",
+      flatpickr_min_date: Time.zone.now
+    }%>
+    </p>
         <%= f.button :submit, :class =>"btn btn-success" %>
       <% end %>
       <%=  %>
