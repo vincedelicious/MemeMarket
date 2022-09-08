@@ -1,4 +1,4 @@
-.h2-show {
+.h2-edit {
   font-size: 60px;
   font-weight: 900;
 }
@@ -11,7 +11,7 @@ article {
   background-clip: inherit;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-align: center;
+  text-align: left;
 }
 
 .purple-text {
@@ -24,8 +24,4 @@ article {
 
 .blue-text {
   color:rgb(44, 140, 250);
-}
-
-.green {
-  background-color: #22b52f;
 }
