@@ -1,4 +1,100 @@
-<div class="container">
-  <h1>Dashboard with all the current users memes etc. </h1>
-  <%# Loop through @memes to display all of the cards for current user %>
+<div class="container container-dashboard">
+  <article>
+    <h1 class="h1-index mb-5">Dashboard</h1>
+  </article>
+  <div class="row row-dashboard">
+    <div class="d-flex justify-content-between">
+      <a class="btn purple p-2 m-5" data-bs-toggle="collapse" href="#collapseExample" role="button"
+      aria-expanded="false" aria-controls="collapseExample">
+        View all my Memes
+      </a>
+      <a class="btn purple p-2 m-5" data-bs-toggle="collapse" href="#collapseExample2" role="button"
+      aria-expanded="false" aria-controls="collapseExample">
+        View all my active Memes
+      </a>
+      <a class="btn purple p-2 m-5" data-bs-toggle="collapse" href="#collapseExample1" role="button"
+      aria-expanded="false" aria-controls="collapseExample">
+        View Pending Memes
+      </a>
+    </div>
+    <div class="collapse collapse-show" id="collapseExample">
+      <div class="row">
+        <% @memes.each do |meme| %>
+          <div class="col-4">
+            <div class="card">
+              <%= cl_image_tag "#{meme.photo.key}" %>
+              <div class="card-body">
+                <span class="tag tag-purple mb-4"><%= meme.category %></span>
+                <h4>
+                  <%= meme.title %>
+                </h4>
+                <p>
+                  <%= meme.description %>
+                </p>
+                <div class="user">
+                  <img src="https://www.pngitem.com/pimgs/m/41-415798_doge-vector-illustration-doge-meme-vector-hd-png.png" alt="User Image">
+                  <div class="user-info">
+                    <h5><%= meme.user.name %></h5>
+                    <p><small><% @a =TimeDifference.between(meme.created_at, Time.now).in_general %><%= @a[:days] == 0 ? '' : "#{@a[:days]}d "%><%= @a[:hours] == 0 ? '' : "#{@a[:hours]}h " %><%= @a[:minutes] %>m ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="collapse collapse-show" id="collapseExample1">
+      <div class="row">
+        <% @bookings_pending.each do |booking| %>
+          <div class="col-4">
+            <div class="card">
+              <%= cl_image_tag "#{booking.meme.photo.key}" %>
+              <div class="card-body">
+                <span class="tag tag-purple mb-4"><%= booking.meme.category %></span>
+                <h4>
+                  <%= booking.meme.title %>
+                </h4>
+                <p>
+                  <%= booking.meme.description %>
+                </p>
+                <div class="user">
+                  <img src="https://www.pngitem.com/pimgs/m/41-415798_doge-vector-illustration-doge-meme-vector-hd-png.png" alt="User Image">
+                  <div class="user-info">
+                    <h5><%= booking.user.name %></h5>
+                    <p><small><% @a =TimeDifference.between(booking.meme.created_at, Time.now).in_general %><%= @a[:days] == 0 ? '' : "#{@a[:days]}d "%><%= @a[:hours] == 0 ? '' : "#{@a[:hours]}h " %><%= @a[:minutes] %>m ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="collapse collapse-show" id="collapseExample2">
+      <div class="row">
+        <% @bookings_active.each do |booking| %>
+          <div class="card col-4">
+            <%= cl_image_tag "#{booking.meme.photo.key}" %>
+            <div class="card-body">
+              <span class="tag tag-purple mb-4"><%= booking.meme.category %></span>
+              <h4>
+                <%= booking.meme.title %>
+              </h4>
+              <p>
+                <%= booking.meme.description %>
+              </p>
+              <div class="user">
+                <img src="https://www.pngitem.com/pimgs/m/41-415798_doge-vector-illustration-doge-meme-vector-hd-png.png" alt="User Image">
+                <div class="user-info">
+                  <h5><%= booking.user.name %></h5>
+                  <p><small><% @a =TimeDifference.between(booking.meme.created_at, Time.now).in_general %><%= @a[:days] == 0 ? '' : "#{@a[:days]}d "%><%= @a[:hours] == 0 ? '' : "#{@a[:hours]}h " %><%= @a[:minutes] %>m ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
