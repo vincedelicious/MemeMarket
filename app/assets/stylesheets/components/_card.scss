@@ -1,0 +1,211 @@
+.card-index {
+  background: #222;
+  border: 2px solid #dd2476;
+  color: rgba(250, 250, 250, 0.8);
+  margin-bottom: 2rem;
+}
+.postcard {
+  flex-wrap: wrap;
+  display: flex;
+  height: 200px;
+
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-radius: 0px 10px 10px 0px;
+  margin: 0 0 2rem 0;
+  overflow: hidden;
+  position: relative;
+  color: black;
+
+  &.dark {
+    background-color: #18151f;
+  }
+  &.light {
+    background-color: #e1e5ea;
+  }
+
+  .t-dark {
+    color: #18151f;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  img {
+    width: 40%;
+    height: 100%;
+    background-color: #110f16;
+    object-fit: contain;
+  }
+
+  h1,
+  .h1 {
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .small {
+    font-size: 80%;
+  }
+
+  .large {
+    font-size: 100%;
+  }
+  .postcard__title {
+    font-size: 30px;
+    text-decoration: none;
+  }
+
+  .postcard__body {
+    color: #a149e9;
+    font-size: 25px;
+  }
+
+  .postcard__img {
+    max-height: 180px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+
+  .postcard__img_link {
+    display: contents;
+  }
+
+  .postcard__bar {
+    width: 30px;
+    height: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #59c7f3;
+    transition: width 1s ease;
+  }
+
+  .postcard__text {
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .postcard__preview-txt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: justify;
+    height: 100%;
+  }
+
+  .postcard__tagbox {
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 14px;
+    margin: 20px 0 0 0;
+    padding: 0;
+    justify-content: center;
+
+    .tag__item {
+      display: inline-block;
+      background: rgba(83, 83, 83, 0.4);
+      border-radius: 3px;
+      padding: 2.5px 10px;
+      margin: 0 5px 5px 0;
+      cursor: default;
+      user-select: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background: rgba(83, 83, 83, 0.8);
+      }
+    }
+  }
+
+  &:hover .postcard__bar {
+    width: 250px;
+  }
+}
+
+.postcard:hover {
+  border: 8px solid black;
+  opacity: 100%;
+  background-color: #a149e9;
+
+  .postcard__title {
+    color: white;
+  }
+
+  .postcard__bar {
+    background-color: #59aedf;
+  }
+
+  .postcard__body {
+    color: white;
+  }
+
+  .ribbon__content {
+    background-color: #e1e5ea;
+    color: black;
+    border: 2px dotted rgba(0, 0, 0, 0.344);
+    outline: 2px solid #f67575;
+  }
+}
+
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+.ribbon__content {
+  left: -25px;
+  top: 35px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 10px 0;
+  background-color: #7b34d2;
+  box-shadow: 0 0px 10px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  text-align: center;
+  border: 2px dotted #fff;
+  outline: 2px solid #e686f5;
+}
+.ribbon::before {
+  top: 0;
+  left: 0;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  position: absolute;
+  z-index: -1;
+  content: "";
+  display: block;
+  border: 5px solid #f19066;
+  box-sizing: content-box;
+}
+.ribbon::after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  position: absolute;
+  z-index: -1;
+  content: "";
+  display: block;
+  border: 5px solid #f19066;
+}
+
+// <div class="col-4">
+// <div class="card card-index">
+//   <%= cl_image_tag meme.photo.key %>
+//   <div class="card-title"><%= meme.title %></div>
+//   <div class="card-text"><%= meme.price %></div>
+//   <div class="card-footer"><%= meme.category %></div>
+// </div>
+// </div>
