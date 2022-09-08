@@ -1,6 +1,11 @@
 class MemesController < ApplicationController
   def index
-    @memes = Meme.all
+    if params[:query].present?
+      sql_query = 'title ILIKE :query OR category ILIKE :query OR description ILIKE :query'
+      @memes = Meme.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @memes = Meme.all
+    end
   end
 
   def show
