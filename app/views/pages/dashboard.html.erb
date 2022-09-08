@@ -29,16 +29,6 @@
                   <h4>
                     <%= meme.title %>
                   </h4>
-                  <p>
-                    <%= meme.description %>
-                  </p>
-                  <div class="user">
-                    <img src="https://www.pngitem.com/pimgs/m/41-415798_doge-vector-illustration-doge-meme-vector-hd-png.png" alt="User Image">
-                    <div class="user-info">
-                      <h5><%= meme.user.name %></h5>
-                      <p><small><% @a =TimeDifference.between(meme.created_at, Time.now).in_general %><%= @a[:days] == 0 ? '' : "#{@a[:days]}d "%><%= @a[:hours] == 0 ? '' : "#{@a[:hours]}h " %><%= @a[:minutes] %>m ago</small></p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </a>
@@ -58,16 +48,6 @@
                   <h4>
                     <%= booking.meme.title %>
                   </h4>
-                  <p>
-                    <%= booking.meme.description %>
-                  </p>
-                  <div class="user">
-                    <img src="https://www.pngitem.com/pimgs/m/41-415798_doge-vector-illustration-doge-meme-vector-hd-png.png" alt="User Image">
-                    <div class="user-info">
-                      <h5><%= booking.user.name %></h5>
-                      <p><small><% @a =TimeDifference.between(booking.meme.created_at, Time.now).in_general %><%= @a[:days] == 0 ? '' : "#{@a[:days]}d "%><%= @a[:hours] == 0 ? '' : "#{@a[:hours]}h " %><%= @a[:minutes] %>m ago</small></p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </a>
@@ -87,16 +67,6 @@
                   <h4>
                     <%= booking.meme.title %>
                   </h4>
-                  <p>
-                    <%= booking.meme.description %>
-                  </p>
-                  <div class="user">
-                    <img src="https://www.pngitem.com/pimgs/m/41-415798_doge-vector-illustration-doge-meme-vector-hd-png.png" alt="User Image">
-                    <div class="user-info">
-                      <h5><%= booking.user.name %></h5>
-                      <p><small><% @a =TimeDifference.between(booking.meme.created_at, Time.now).in_general %><%= @a[:days] == 0 ? '' : "#{@a[:days]}d "%><%= @a[:hours] == 0 ? '' : "#{@a[:hours]}h " %><%= @a[:minutes] %>m ago</small></p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </a>

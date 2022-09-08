@@ -16,7 +16,7 @@
     <div class="row">
       <% @memes.each do |meme| %>
         <a href="/memes/<%= meme.id %>">
-          <div class="d-flex postcard light blue">
+          <div class="d-flex postcard rounded light blue">
             <%= cl_image_tag meme.photo.key %>
             <div class="postcard__text t-dark">
               <div class="postcard__subtitle small">

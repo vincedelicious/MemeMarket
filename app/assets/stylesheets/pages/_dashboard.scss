@@ -3,7 +3,8 @@
 .card {
   color: #10182f;
   margin: 10px;
-  background-color: #fff;
+  background-color: #e1e5ea;
+  border: 1px solid rgb(233, 77, 129);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 300px;
@@ -20,7 +21,6 @@
   justify-content: center;
   align-items: flex-start;
   padding: 20px;
-  min-height: 250px;
 }
 
 .card-body p {
