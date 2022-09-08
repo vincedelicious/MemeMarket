@@ -1,6 +1,16 @@
 <div class="container container-index">
   <article>
     <h1 class="h1-index mb-5">Market Place</h1>
+
+    <%= form_with url: memes_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a meme"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
   </article>
   <div class="container-index1">
     <div class="row">
