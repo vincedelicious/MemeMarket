@@ -24,13 +24,18 @@
 .container-show-tile1 {
   align-items: flex-start;
   h1{
-    font-size: 24px;
+    font-size: 35px;
+    font-weight: 700;
   }
   img{
     width: 300px;
-    height: 30vh;
+    height: 50vh;
     object-fit: contain;
   }
+}
+
+.container-show-tile2 .desc{
+  font-size: 20px;
 }
 
 .container-footer {
@@ -44,4 +49,56 @@
 .booking-details img {
   width: 450px;
 
+}
+
+.card-price {
+	display: inline-block;
+
+  width: auto;
+	height: 38px;
+
+	background-color: #22b52f;
+	-webkit-border-radius: 3px 4px 4px 3px;
+	-moz-border-radius: 3px 4px 4px 3px;
+	border-radius: 3px 4px 4px 3px;
+
+	border-left: 1px solid #6ab070;
+
+	/* This makes room for the triangle */
+	margin-left: 19px;
+
+	position: relative;
+
+	color: white;
+	font-weight: 300;
+	font-size: 22px;
+	line-height: 38px;
+
+	padding: 0 10px 0 10px;
+}
+
+/* Makes the triangle */
+.card-price:before {
+	content: "";
+	position: absolute;
+	display: block;
+	left: -19px;
+	width: 0;
+	height: 0;
+	border-top: 19px solid transparent;
+	border-bottom: 19px solid transparent;
+	border-right: 19px solid #22b52f;
+}
+
+/* Makes the circle */
+.card-price:after {
+	content: "";
+	background-color: #10182f;
+	border-radius: 50%;
+	width: 5px;
+	height: 5px;
+	display: block;
+	position: absolute;
+	left: -9px;
+	top: 17px;
 }

@@ -1,16 +1,20 @@
 <div class="container container-show">
-  <div class="d-flex align-items-center">
-    <div class="container-show-tile1 m-3">
-      <h1><%= @meme.title %></h1>
+  <div class="d-flex align-items-start">
+    <div class="container-show-tile1 m-2">
+      <article>
+        <h1><%= @meme.title %></h1>
+      </article>
       <%= cl_image_tag(@meme.photo.key) %>
       <%= link_to "Request a booking", "/memes/#{@meme.id}/bookings/new", class: "btn btn-success mt-3" %>
       <%= link_to "Edit", "/memes/#{@meme.id}/edit", class: "btn btn-warning mt-3" %>
       <%= link_to "Delete", meme_path(@meme), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{@meme.title}?"}, class: "btn btn-danger mt-3" %>
     </div>
-    <div class="container-show-tile2">
-      <p>Category: <%= @meme.category %></p>
-      <p>Description: <%= @meme.description %></p>
-      <p>$ <%= @meme.price %></p>
+    <div class="container-show-tile2 ms-5 mt-3 pt-5">
+      <div class="d-flex-3">
+        <p class="card-price m-1">$ <%= @meme.price %></p>
+        <p class="badge purple m-1"><%= @meme.category %></p>
+      </div>
+      <p class="mt-4 desc"><%= @meme.description %></p>
     </div>
   </div>
 </div>
