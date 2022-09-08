@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'memes#index'
+  root to: 'pages#home'
   resources :memes do
     resources :bookings, only: %i[new create show]
   end
