@@ -29,9 +29,12 @@ class MemesController < ApplicationController
 
   def update
     @meme = Meme.find(params[:id])
-    @meme.title = meme_params.title
-    @meme.category = meme_params.category
-    @meme.price = meme_params.price
+    @meme.title = meme_params[:title]
+    @meme.category = meme_params[:category]
+    @meme.price = meme_params[:price]
+    @meme.save
+
+    redirect_to meme_path(@meme)
   end
 
   def edit

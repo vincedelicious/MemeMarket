@@ -1,0 +1,15 @@
+.h2-show {
+  font-size: 60px;
+  font-weight: 900;
+}
+
+article {
+  background: linear-gradient(to right,
+    hsl(98, 100%, 62%),
+    hsl(204, 100%, 59%)
+  );
+  background-clip: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
