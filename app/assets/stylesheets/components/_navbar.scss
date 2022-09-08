@@ -7,6 +7,9 @@
 .nav-link {
   color:white;
   font-size: 20px;
+  &:hover {
+    color: #a149e9;
+  }
 }
 
 .navbar-meme .navbar-collapse {
