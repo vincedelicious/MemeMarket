@@ -14,7 +14,7 @@ $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 :root {
-  --gradient: linear-gradient(to left top, #DD2476 10%, #FF512F 90%) !important;
+  --gradient: linear-gradient(to left top, #dd2476 10%, #ff512f 90%) !important;
 }
 
 .h1-index {
@@ -22,8 +22,16 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   font-weight: 900;
 }
 
+.search-bar {
+  background-color: #110f16;
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+}
+
 article {
-  background: linear-gradient(to right,
+  background: linear-gradient(
+    to right,
     hsl(98, 100%, 62%),
     hsl(204, 100%, 59%)
   );
