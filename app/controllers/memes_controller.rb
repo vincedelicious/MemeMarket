@@ -10,6 +10,7 @@ class MemesController < ApplicationController
 
   def show
     @meme = Meme.find(params[:id])
+    @bookings = Booking.where(user_id: current_user)
   end
 
   def destroy
