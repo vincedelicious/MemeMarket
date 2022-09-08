@@ -5,19 +5,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @memes = Meme.where { |meme| meme.user == current_user }
-  end
-
-  def my_memes
-    @memes = Meme.where { |meme| meme.user == current_user }
-  end
-
-  def active_requests
-
-  end
-
-  def pending_requests
-    @bookings = Booking.where(status: 0)
     @memes = Meme.all
+    @memes_current = Meme.where { |meme| meme.user == current_user }
+    @bookings_active = Booking.where(status: 1)
+    @bookings_pending = Booking.where(status: 0)
   end
 end
