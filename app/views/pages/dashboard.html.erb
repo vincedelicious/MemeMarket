@@ -46,7 +46,10 @@
                   <div class="card">
                     <%= cl_image_tag "#{booking.meme.photo.key}" %>
                     <div class="card-body">
-                      <span class="tag tag-purple mb-4"><%= booking.meme.category %></span>
+                      <div class="d-flex">
+                        <span class="tag tag-purple mb-4 me-2"><%= booking.meme.category %></span>
+                        <span class="tag tag-yellow mb-4">Pending</span>
+                      </div>
                       <h4>
                         <%= booking.meme.title %>
                       </h4>
@@ -74,7 +77,10 @@
                   <div class="card">
                     <%= cl_image_tag "#{booking.meme.photo.key}" %>
                     <div class="card-body">
-                      <span class="tag tag-purple mb-4"><%= booking.meme.category %></span>
+                      <div class="d-flex">
+                        <span class="tag tag-purple mb-4 me-2"><%= booking.meme.category %></span>
+                        <span class="tag tag-green mb-4">Approved</span>
+                      </div>
                       <h4>
                         <%= booking.meme.title %>
                       </h4>

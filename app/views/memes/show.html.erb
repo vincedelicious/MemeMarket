@@ -13,8 +13,9 @@
       </article>
       <div class="d-flex">
         <p class="badge card-price green me-2">$<%= @meme.price %></p>
-        <p class="badge purple ms-2"><%= @meme.category %></p>
-
+        <p class="badge purple ms-2 me-2"><%= @meme.category %></p>
+        <% raise %>
+        <p class="badge tag-yellow ms-2">Pending</p>
       </div>
       <p class="mt-4 desc"><%= @meme.description %></p>
       <div class="ms-0">

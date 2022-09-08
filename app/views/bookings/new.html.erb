@@ -1,25 +1,30 @@
 <div class="container">
   <div class="d-flex justify-content-between align-items-center">
-    <div class="form-container">
-      <h2>Create booking request for <%= @meme.title %> Meme</h2>
-      <%= simple_form_for [@meme, @booking] do |f| %>
-      <p>Start Date<br>
-        <%= f.text_field :start_date, as: :date, data: {
+    <div>
+      <article>
+        <h2 class="mb-5 pb-3">Create booking request for -<br>
+          (<%= @meme.title %> Meme)</h2>
+      </article>
+      <div class="form-container">
+        <%= simple_form_for [@meme, @booking] do |f| %>
+          <p><small>Start Date</small><br>
+            <%= f.text_field :start_date, as: :date, data: {
       controller: "flatpickr",
       flatpickr_date_format: "Y-m-d",
-      flatpickr_min_date: Time.zone.now
+      flatpickr_min_date: Time.zone.now, class: "input"
     } %>
-    </p>
-    <p>End Date <br>
-        <%= f.text_field :end_date, as: :date, data: {
+          </p>
+          <p><small>End Date</small><br>
+            <%= f.text_field :end_date, as: :date, data: {
       controller: "flatpickr",
       flatpickr_date_format: "Y-m-d",
       flatpickr_min_date: Time.zone.now
     }%>
-    </p>
-        <%= f.button :submit, :class =>"btn btn-success" %>
-      <% end %>
-      <%=  %>
+          </p>
+          <%= f.button :submit, :class =>"btn purple mt-3" %>
+        <% end %>
+        <%=  %>
+      </div>
     </div>
     <div class="booking-details mb-3 border shadow bg-white">
       <%= cl_image_tag @meme.photo.key %>
