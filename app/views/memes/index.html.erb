@@ -1,22 +1,23 @@
-<div class="container">
-  <div class="heading">
-    <h1>Market Place</h1>
-  </div>
+<div class="container container-index">
+  <article>
+    <h1 class="h1-index mb-5">Market Place</h1>
+  </article>
   <div class="container-index1">
-    <div class="row mb-2 mt-5">
+    <div class="row">
       <% @memes.each do |meme| %>
         <a href="/memes/<%= meme.id %>">
-          <div class="d-flex justify-content-between postcard light blue">
-            <%= cl_image_path meme.photo.key %>
+          <div class="d-flex postcard light blue">
+            <%= cl_image_tag meme.photo.key %>
             <div class="postcard__text t-dark">
               <div class="postcard__subtitle small">
                 <h1 class="postcard__title blue"><%= meme.title %></h1>
-                <p><%= meme.category %></p>
               </div>
               <div class="postcard__bar"></div>
-              <div class="postcard__preview-txt"><%= meme.description %></div>
-              <p><i class="fa-solid fa-dollar-sign large"></i> <%= meme.price %></p>
+              <div class="postcard__body">
+                <i class="fa-solid fa-dollar-sign large"></i> <%= meme.price %>
+              </div>
             </div>
+            <div class="ribbon"><span class="ribbon__content"><%= meme.category %></span></div>
           </div>
         </a>
       <% end %>

@@ -2,7 +2,7 @@
   <div class="d-flex align-items-center">
     <div class="container-show-tile1 m-3">
       <h1><%= @meme.title %></h1>
-      <%= cl_image_path(@meme.photo.key) %>
+      <%= cl_image_tag(@meme.photo.key) %>
       <%= link_to "Request a booking", "/memes/#{@meme.id}/bookings/new", class: "btn btn-success mt-3" %>
     </div>
     <div class="container-show-tile2">
