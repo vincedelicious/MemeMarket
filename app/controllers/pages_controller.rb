@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @memes = Meme.all
+    @memes = Meme.where(user: current_user)
     @bookings_active = Booking.where(status: 1)
     @bookings_pending = Booking.where(status: 0)
   end
