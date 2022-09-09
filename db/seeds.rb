@@ -6,15 +6,15 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-meme5 = Meme.new(title: "RGB Life", description: "Did you just assume my OS?", category: "RGB", price: "500", user_id: "1")
+meme5 = Meme.new(title: "RGB Life", description: "Did you just assume my OS?", category: "Imposter", price: "500", user_id: "1")
 meme5.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534054/production/2v4w4nrzgm60t3k72di81ob8zkff.jpg"), filename: "MemeRGB.jpg", content_type: "image/jpg")
 meme5.save!
 
-meme = Meme.new(title: "Backend vs. Frontend", description: "One for show, one for function. Both clearly very yummy.", category: "Full Stack", price:"200", user_id:"1" )
+meme = Meme.new(title: "Backend vs. Frontend", description: "One for show, one for function. Both clearly very yummy.", category: "FullStack", price:"200", user_id:"1" )
 meme.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534051/production/41orckdl16smw944wcehaq0vy8ki.jpg"), filename: "MemeBackvsFront.jpg", content_type: "image/jpg")
 meme.save!
 
-meme1 = Meme.new(title: "Bell Curve of Knowledge", description: "Related: The Dunning Kruger Effect", category: "Imposter Syndrome", price:"113", user_id:"1" )
+meme1 = Meme.new(title: "Bell Curve of Knowledge", description: "Related: The Dunning Kruger Effect", category: "Imposter", price:"113", user_id:"1" )
 meme1.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534051/production/po5o802q9b0sdy831l26bvxehzir.jpg"), filename: "MemeBigBrainTime.jpg", content_type: "image/jpg")
 meme1.save!
 
@@ -22,11 +22,11 @@ meme2 = Meme.new(title: "I am the Danger", description: "If you ARE the origin m
 meme2.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534052/production/4jf1x7fhkjq145xybsf3yzmrce9l.jpg"), filename: "MemeDocumentation.jpg", content_type: "image/jpg")
 meme2.save!
 
-meme3 = Meme.new(title: "Why won't it work?", description: "Possibly related to showerthoughts", category: "Sleep", price:"10", user_id:"1" )
+meme3 = Meme.new(title: "Why won't it work?", description: "Possibly related to showerthoughts", category: "FullStack", price:"10", user_id:"1" )
 meme3.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534053/production/i7c3cc2z5fgosxer2li58132v3kt.webp"), filename: "MemeSleep.webp", content_type: "image/webp")
 meme3.save!
 
-meme4 = Meme.new(title: "No", description: "It's really cool being a dev! Up until everyone and your grandmother suddenly want to pitch", category: "Family & Friends", price:"41", user_id:"1" )
+meme4 = Meme.new(title: "No", description: "It's really cool being a dev! Up until everyone and your grandmother suddenly want to pitch", category: "FullStack", price:"41", user_id:"1" )
 meme4.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534053/production/ox7gam42d6bji8yh6983lrcvrdjj.jpg"), filename: "MemeNo.jpg", content_type: "image/jpg")
 meme4.save!
 
@@ -34,7 +34,7 @@ meme6 = Meme.new(title: "SQL isn't a real language", description: "What's not re
 meme6.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534054/production/gln4e471089wv2e2ecqsunsr44yg.jpg"), filename: "MemeSQL.jpg", content_type: "image/jpg")
 meme6.save!
 
-meme7 = Meme.new(title: "Professor C++", description: "WHY DO I OPEN SO MANY TABS", category: "Research", price: "1000", user_id: "2")
+meme7 = Meme.new(title: "Professor C++", description: "WHY DO I OPEN SO MANY TABS", category: "FullStack", price: "1000", user_id: "2")
 meme7.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534054/production/08k65m0x4t7nfueva4mef4ye9np9.webp"), filename: "MemeStackoverflow.png", content_type: "image/png")
 meme7.save!
 
@@ -42,6 +42,6 @@ meme8 = Meme.new(title: "Online Tutorials", description: "Look okay you wouldn't
 meme8.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534055/production/iue6dmb2yz2ie6ms2nklob9607z2.jpg"), filename: "MemeStranded.jpg", content_type: "image/jpg")
 meme8.save!
 
-meme9 = Meme.new(title: "Unsheathe", description: "I'm a professional.", category: "Imposter Syndrome", price: "2500", user_id: "2")
+meme9 = Meme.new(title: "Unsheathe", description: "I'm a professional.", category: "Imposter", price: "2500", user_id: "2")
 meme9.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534055/production/cnt6yxte15bdl2hm5m7dx2vtgm2r.png"), filename: "MemeSword.png", content_type: "image/png")
 meme9.save!
