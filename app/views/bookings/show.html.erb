@@ -5,3 +5,9 @@
 <p>Booking start date: <%= @booking.start_date %></p>
 <p>Booking end date: <%= @booking.end_date %></p>
 </div>
+
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
