@@ -22,7 +22,7 @@
             <%= image_tag "https://ps.w.org/wpdevart-vertical-menu/assets/icon-128x128.png?rev=2584189", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "View Profile", "/dashboard", class: "dropdown-item" %>
-              <%= link_to "Market Place", "/", class: "dropdown-item" %>
+              <%= link_to "Marketplace", "/", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
