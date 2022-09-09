@@ -8,18 +8,16 @@
       <div class="form-container">
         <%= simple_form_for [@meme, @booking] do |f| %>
           <p><small>Start Date</small><br>
-            <%= f.text_field :start_date, as: :date, data: {
-      controller: "flatpickr",
-      flatpickr_date_format: "Y-m-d",
-      flatpickr_min_date: Time.zone.now, class: "input"
-    } %>
+            <%= f.text_field :start_date, data: { controller: "flatpickr", flatpickr_date_format: "Y-m-d", flatpickr_mode: "range", flatpickr_min_date: Time.zone.now } %>
           </p>
           <p><small>End Date</small><br>
-            <%= f.text_field :end_date, as: :date, data: {
-      controller: "flatpickr",
-      flatpickr_date_format: "Y-m-d",
-      flatpickr_min_date: Time.zone.now
-    }%>
+            <%= f.text_field :end_date, id: "secondRangeInput" %>
+            <%# # , data: {
+      # controller: "flatpickr",
+      # flatpickr_date_format: "Y-m-d",
+      # flatpickr_mode: "range",
+      # flatpickr_min_date: Time.zone.now} %>
+
           </p>
           <%= f.button :submit, :class =>"btn purple mt-3" %>
         <% end %>
