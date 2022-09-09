@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
     @booking.meme = Meme.find(params[:meme_id])
     @booking.user = current_user
     if @booking.save
+      flash[:booking] = "Booking request for #{@booking.meme.title} sent!"
       redirect_to dashboard_path
     else
       render 'new', status: :unprocessable_entity
