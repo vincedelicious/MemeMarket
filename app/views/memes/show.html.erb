@@ -26,8 +26,10 @@
       <p class="mt-4 desc"><%= @meme.description %></p>
       <div class="ms-0">
         <%= link_to '', "/memes/#{@meme.id}/bookings/new", class: "fa-regular fa-calendar blue-text me-5 mt-5 pt-5" %>
-        <%= link_to '', "/memes/#{@meme.id}/edit", class: "fa-solid fa-pen-to-square yellow-text me-5 ms-3" %>
-        <%= link_to '', meme_path(@meme), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "fa-regular fa-trash-can purple-text ms-2" %>
+        <% if @meme.user == current_user %>
+          <%= link_to '', "/memes/#{@meme.id}/edit", class: "fa-solid fa-pen-to-square yellow-text me-5 ms-3" %>
+          <%= link_to '', meme_path(@meme), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "fa-regular fa-trash-can purple-text ms-2" %>
+        <% end %>
       </div>
     </div>
   </div>
