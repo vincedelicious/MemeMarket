@@ -10,88 +10,89 @@
         </button>
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <div class="row">
-            <% @memes.each do |meme| %>
-              <div class="col-4">
-                <a href="/memes/<%= meme.id %>">
-                  <div class="card">
-                    <%= cl_image_tag "#{meme.photo.key}" %>
-                    <div class="card-body">
-                      <span class="tag tag-purple mb-4"><%= meme.category %></span>
-                      <h4>
-                        <%= meme.title %>
-                      </h4>
-                    </div>
+        <%= link_to "Add", new_meme_path(), class: "fa-solid btn purple fa-plus pe-3 ms-4 mt-4"%>
+      <div class="accordion-body">
+        <div class="row">
+          <% @memes.each do |meme| %>
+            <div class="col-4">
+              <a href="/memes/<%= meme.id %>">
+                <div class="card">
+                  <%= cl_image_tag "#{meme.photo.key}" %>
+                  <div class="card-body">
+                    <span class="tag tag-purple mb-4"><%= meme.category %></span>
+                    <h4>
+                      <%= meme.title %>
+                    </h4>
                   </div>
-                </a>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item bckg-color">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Pending Requests
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <div class="row">
-            <% @bookings_pending.each do |booking| %>
-              <div class="col-4">
-                <a href="/memes/<%= booking.meme.id %>">
-                  <div class="card">
-                    <%= cl_image_tag "#{booking.meme.photo.key}" %>
-                    <div class="card-body">
-                      <div class="d-flex">
-                        <span class="tag tag-purple mb-4 me-2"><%= booking.meme.category %></span>
-                        <span class="tag tag-yellow mb-4">Pending</span>
-                      </div>
-                      <h4>
-                        <%= booking.meme.title %>
-                      </h4>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="accordion-item bckg-color">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Active Bookings
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <div class="row">
-            <% @bookings_active.each do |booking| %>
-              <div class="col-4">
-                <a href="/memes/<%= booking.meme.id %>">
-                  <div class="card">
-                    <%= cl_image_tag "#{booking.meme.photo.key}" %>
-                    <div class="card-body">
-                      <div class="d-flex">
-                        <span class="tag tag-purple mb-4 me-2"><%= booking.meme.category %></span>
-                        <span class="tag tag-green mb-4">Approved</span>
-                      </div>
-                      <h4>
-                        <%= booking.meme.title %>
-                      </h4>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            <% end %>
-          </div>
+                </div>
+              </a>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
+  <div class="accordion-item bckg-color">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Pending Requests
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="row">
+          <% @bookings_pending.each do |booking| %>
+            <div class="col-4">
+              <a href="/memes/<%= booking.meme.id %>">
+                <div class="card">
+                  <%= cl_image_tag "#{booking.meme.photo.key}" %>
+                  <div class="card-body">
+                    <div class="d-flex">
+                      <span class="tag tag-purple mb-4 me-2"><%= booking.meme.category %></span>
+                      <span class="tag tag-yellow mb-4">Pending</span>
+                    </div>
+                    <h4>
+                      <%= booking.meme.title %>
+                    </h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item bckg-color">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Active Bookings
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="row">
+          <% @bookings_active.each do |booking| %>
+            <div class="col-4">
+              <a href="/memes/<%= booking.meme.id %>">
+                <div class="card">
+                  <%= cl_image_tag "#{booking.meme.photo.key}" %>
+                  <div class="card-body">
+                    <div class="d-flex">
+                      <span class="tag tag-purple mb-4 me-2"><%= booking.meme.category %></span>
+                      <span class="tag tag-green mb-4">Approved</span>
+                    </div>
+                    <h4>
+                      <%= booking.meme.title %>
+                    </h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>

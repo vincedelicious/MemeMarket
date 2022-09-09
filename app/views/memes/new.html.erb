@@ -1,13 +1,32 @@
 <div class="container">
-  <h1>Create a new Meme</h1>
-  <div class="form-new mb-3 p-5">
-    <%= simple_form_for @meme do |f| %>
-      <%= f.input :title %>
-      <%= f.input :photo, as: :file %>
-      <%= f.input :category %>
-      <%= f.input :description %>
-      <%= f.input :price %>
-      <%= f.button :submit, :class =>"btn btn-primary" %>
-    <% end %>
+  <article>
+    <h1 class="h1-new-meme ps-2 ms-5">Create a new Meme</h1>
+  </article>
+  <div class="d-flex form-new mb-3 p-5">
+    <div class="col-12 me-5">
+      <%= simple_form_for @meme do |f| %>
+        <div class="d-flex">
+          <div class="m-2">
+            <%= f.input :title %>
+          </div>
+          <div class="m-2">
+            <%= f.input :category %>
+          </div>
+          <div class="m-2">
+            <%= f.input :price %>
+          </div>
+        </div>
+        <div class="m-2 ">
+          <%= f.input :description %>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div class="m-2">
+            <%= f.input :photo, as: :file %>
+          </div>
+          <%= f.button :submit, :class =>"btn purple mt-5 mb-5" %>
+        </div>
+      <% end %>
+    </div>
+  <div class="col-3 new-meme-image"></div>
   </div>
 </div>
