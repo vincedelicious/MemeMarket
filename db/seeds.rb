@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+# Change file
 
 user1 = User.create(name: "Vince", email: "meme123@gmail.com", password: '123456', password_confirmation: "123456")
 user2 = User.create(name: "Meme", email: "meme124@gmail.com", password: '123456', password_confirmation: "123456")
