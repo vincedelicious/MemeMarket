@@ -22,6 +22,22 @@ class BookingsController < ApplicationController
     end
   end
 
+  def requests
+    @bookings = Booking.where(user_id: current_user)
+  end
+
+  def approve
+    @booking = Booking.find(params[:format])
+    @booking.accepted!
+    redirect_to requests_path
+  end
+
+  def reject
+    @booking = Booking.find(params[:format])
+    @booking.rejected!
+    redirect_to requests_path
+  end
+
   private
 
   def booking_params
