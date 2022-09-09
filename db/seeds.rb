@@ -17,7 +17,7 @@ meme = Meme.new(title: "Backend vs. Frontend", description: "One for show, one f
 meme.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534051/production/41orckdl16smw944wcehaq0vy8ki.jpg"), filename: "user: user2.jpg", content_type: "image/jpg")
 meme.save!
 
-meme1 = Meme.new(title: "Bell Curve of Knowledge", description: "Related: The Dunning Kruger Effect", category: "Imposter", price:"113", user_id:"1" )
+meme1 = Meme.new(title: "Bell Curve of Knowledge", description: "Related: The Dunning Kruger Effect", category: "Imposter", price:"113", user: user2 )
 meme1.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534051/production/po5o802q9b0sdy831l26bvxehzir.jpg"), filename: "MemeBigBrainTime.jpg", content_type: "image/jpg")
 meme1.save!
 
