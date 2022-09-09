@@ -1,0 +1,29 @@
+<div class="container container-requests">
+  <article>
+    <h1 class="h1-requests mb-5">Booking Requests</h1>
+  </article>
+  <div class="row mt-5">
+    <% @bookings.each do |booking| %>
+      <% if booking.status == "pending" %>
+        <div class="col-4">
+          <div class="card">
+            <%= cl_image_tag "#{booking.meme.photo.key}" %>
+            <div class="card-body">
+              <h4 class="mb-4">
+                <%= booking.meme.title %>
+              </h4>
+              <div class="d-flex">
+                <span class="tag tag-purple mb-4 me-2"><%= booking.meme.category %></span>
+                <span class="tag tag-yellow mb-4">Pending</span>
+              </div>
+              <div class="d-flex icon justify-content-between">
+                <%= link_to "", approve_path(booking), data: { turbo_method: :patch }, class: "fa-regular fa-circle-check green-icon fa-2x" %>
+                <%= link_to "", reject_path(booking), data: { turbo_method: :patch }, class: "fa-regular fa-circle-xmark red-icon fa-2x" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
