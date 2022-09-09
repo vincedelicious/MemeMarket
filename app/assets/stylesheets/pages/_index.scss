@@ -3,6 +3,7 @@
 @import "show";
 @import "dashboard";
 @import "edit";
+@import "new_booking";
 
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
 $main-green: #79dd09 !default;
@@ -229,4 +230,27 @@ a:hover {
       transparent 50%
     );
   }
+}
+
+.tag {
+  background: #cccccc;
+  border-radius: 50px;
+  font-size: 12px;
+  margin: 0;
+  color: #fff;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.tag-green {
+  background-color: #34d955;
+}
+.tag-purple {
+  background-color: #a149e9;
+}
+.tag-pink {
+  background-color: #cd5b9f;
+}
+.tag-yellow {
+  background-color: #ffc430;
 }

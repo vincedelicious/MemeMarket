@@ -13,8 +13,15 @@
       </article>
       <div class="d-flex">
         <p class="badge card-price green me-2">$<%= @meme.price %></p>
-        <p class="badge purple ms-2"><%= @meme.category %></p>
-
+        <p class="badge purple ms-2 me-2"><%= @meme.category %></p>
+        <% @bookings.each do |booking| %>
+          <% if booking.meme_id == @meme.id  && booking.status == 'pending' %>
+            <p class="badge tag-yellow ms-2 me-2">Pending</p>
+          <% end %>
+          <% if booking.meme_id == @meme.id  && booking.status == 'accepted' %>
+            <p class="badge tag-green ms-2 me-2">Active</p>
+          <% end %>
+        <% end %>
       </div>
       <p class="mt-4 desc"><%= @meme.description %></p>
       <div class="ms-0">

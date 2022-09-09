@@ -15,7 +15,7 @@
   <div class="container m-0 pt-0 ps-3 pe-3 container-index1">
     <div class="row">
       <% @memes.each do |meme| %>
-        <a href="/memes/<%= meme.id %>">
+        <a class="links" href="/memes/<%= meme.id %>">
           <div class="d-flex postcard rounded light blue">
             <%= cl_image_tag meme.photo.key %>
             <div class="postcard__text t-dark">

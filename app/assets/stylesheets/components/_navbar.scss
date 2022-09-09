@@ -32,4 +32,9 @@
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
+  transition: 1s ease;
+  &:hover {
+    width: 120px;
+    height: 120px;
+  }
 }

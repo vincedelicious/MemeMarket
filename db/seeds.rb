@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+meme5 = Meme.new(title: "RGB Life", description: "Did you just assume my OS?", category: "RGB", price: "500", user_id: "1")
+meme5.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534054/production/2v4w4nrzgm60t3k72di81ob8zkff.jpg"), filename: "MemeRGB.jpg", content_type: "image/jpg")
+meme5.save!
+
 meme = Meme.new(title: "Backend vs. Frontend", description: "One for show, one for function. Both clearly very yummy.", category: "Full Stack", price:"200", user_id:"1" )
 meme.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534051/production/41orckdl16smw944wcehaq0vy8ki.jpg"), filename: "MemeBackvsFront.jpg", content_type: "image/jpg")
 meme.save!
@@ -25,10 +29,6 @@ meme3.save!
 meme4 = Meme.new(title: "No", description: "It's really cool being a dev! Up until everyone and your grandmother suddenly want to pitch", category: "Family & Friends", price:"41", user_id:"1" )
 meme4.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534053/production/ox7gam42d6bji8yh6983lrcvrdjj.jpg"), filename: "MemeNo.jpg", content_type: "image/jpg")
 meme4.save!
-
-meme5 = Meme.new(title: "RGB Life", description: "Did you just assume my OS?", category: "RGB", price: "500", user_id: "1")
-meme5.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534054/production/2v4w4nrzgm60t3k72di81ob8zkff.jpg"), filename: "MemeRGB.jpg", content_type: "image/jpg")
-meme5.save!
 
 meme6 = Meme.new(title: "SQL isn't a real language", description: "What's not real can't hurt me", category: "SQL", price: "5", user_id: "2")
 meme6.photo.attach(io: URI.open("https://res.cloudinary.com/dagrxpx1a/image/upload/v1662534054/production/gln4e471089wv2e2ecqsunsr44yg.jpg"), filename: "MemeSQL.jpg", content_type: "image/jpg")
